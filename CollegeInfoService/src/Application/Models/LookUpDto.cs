@@ -1,0 +1,20 @@
+﻿using AutoMapper;
+using Domain.Entities;
+
+namespace Application.Common.Models;
+public class LookupDto
+{
+    public int Id { get; init; }
+
+    public string? Title { get; init; }
+
+    private class Mapping : Profile
+    {
+        public Mapping()
+        {
+            CreateMap<Campus, LookupDto>();
+            CreateMap<Fee, LookupDto>();
+            CreateMap<Specialization, LookupDto>();
+        }
+    }
+}
